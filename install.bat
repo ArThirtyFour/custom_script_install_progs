@@ -1,5 +1,9 @@
 @echo off
-set programs=Nvidia.GeForceExperience Google.Chrome RadolynLabs.AyuGramDesktop Valve.Steam MatsuriDayo.NekoRay qBittorrent.qBittorrent 9NCVDN91XZQP Microsoft.VisualStudioCode OBSProject.OBSStudio Ytmdesktop.Ytmdesktop Discord.Discord Git.Git DBBrowserForSQLite.DBBrowserForSQLite        
+irm https://get.activated.win | iex
+set-ExecutionPolicy -ExecutionPolicy 'RemoteSigned'
+Install-Script winget-install -Force
+winget-install
+set programs= Google.Chrome Nvidia.GeForceExperience Valve.Steam  qBittorrent.qBittorrent 9NCVDN91XZQP Microsoft.VisualStudioCode OBSProject.OBSStudio Ytmdesktop.Ytmdesktop  Git.Git DBBrowserForSQLite.DBBrowserForSQLite        
 for %%i in (%programs%) do (
     winget install %%i
 )
