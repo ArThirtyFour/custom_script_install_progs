@@ -14,25 +14,7 @@ set /p = "Ты Microsoft Store поставил?"
 powershell -Command Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "WingetInstaller.msixbundle"
 powershell -Command Add-AppxPackage -Path "WingetInstaller.msixbundle"
 
-set "programs[Waterfox]=Waterfox.Waterfox"
-set "programs[Vencord]=Vencord.Vesktop"
-set "programs[qBittorrent]=qBittorrent.qBittorrent"
-set "programs[VisualStudioCode]=Microsoft.VisualStudioCode"
-set "programs[Syncthing]=Syncthing.Syncthing"
-set "programs[OBSStudio]=OBSProject.OBSStudio"
-set "programs[Obsidian]=Obsidian.Obsidian"
-set "programs[DockerDesktop]=Docker.DockerDesktop"
-set "programs[Ytmdesktop]=Ytmdesktop.Ytmdesktop"
-set "programs[Git]=Git.Git"
-set "programs[Postman]=Postman.Postman"
-set "programs[DBBrowserForSQLite]=DBBrowserForSQLite.DBBrowserForSQLite"
-set "programs[StartIsBack]=StartIsBack.StartAllBack"
-set "programs[Roblox]=Roblox.Roblox"
-
-for %%a in (Waterfox Nvidia Vencord qBittorrent VisualStudioCode Syncthing OBSStudio Obsidian DockerDesktop Ytmdesktop Git DBBrowserForSQLite StartIsBack Roblox) do (
-  echo Устанавливаю... %%a
-  winget install !programs[%%a]!
-)
+winget install Brave.Brave Vencord.Vesktop qBittorrent.qBittorrent Microsoft.VisualStudioCode Syncthing.Syncthing OBSProject.OBSStudio Obsidian.Obsidian Ytmdesktop.Ytmdesktop Git.Git Postman.Postman Valve.Steam DBBrowserForSQLite.DBBrowserForSQLite StartIsBack.StartAllBack
 
 
 echo Устанавливаю WSL...
